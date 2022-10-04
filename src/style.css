@@ -1,0 +1,75 @@
+body {
+  background-color: #4b595e;
+  font-family: "Varela Round", sans-serif;
+  color: #fff;
+}
+
+p {
+  font-size: 18px;
+  color: #bdf7ff;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  color: #ffe963;
+}
+
+h2 {
+  text-align: center;
+}
+
+#date-time {
+  text-align: right;
+}
+
+.cloudIcon {
+  text-align: center;
+  width: 100%;
+  font-size: 150px;
+}
+
+.specific {
+  text-align: center;
+  font-size: 12px;
+}
+
+.cloudy {
+  color: #fff;
+}
+
+.sunny {
+  color: #ffe963;
+}
+
+.partlyCloudy {
+  color: #9dbbce;
+}
+
+.fiveDay {
+  text-align: center;
+  font-size: 20px;
+}
+
+.day {
+  font-weight: bold;
+}
+
+.high {
+  font-weight: bold;
+}
+
+#search-form {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+#fahrenheit-celsius {
+  font-size: 16px;
+}
