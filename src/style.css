@@ -24,6 +24,13 @@ h2 {
   text-align: center;
 }
 
+a {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 50px;
+}
+
 #date-time {
   text-align: right;
 }
