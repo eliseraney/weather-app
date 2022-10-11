@@ -9,7 +9,6 @@ p {
   color: #bdf7ff;
   font-style: italic;
   text-align: center;
-  margin-top: 10px;
   margin-bottom: 30px;
 }
 
@@ -33,12 +32,6 @@ a {
 
 #date-time {
   text-align: right;
-}
-
-.cloudIcon {
-  text-align: center;
-  width: 100%;
-  font-size: 150px;
 }
 
 .specific {
@@ -79,4 +72,11 @@ a {
 
 #fahrenheit-celsius {
   font-size: 16px;
+}
+
+#icon {
+  display: block;
+  margin: 20px auto;
+  width: 30%;
+  margin-bottom: 5px;
 }

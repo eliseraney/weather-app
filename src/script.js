@@ -47,6 +47,13 @@ function displayWeatherConditions(response) {
   let humidity = response.data.main.humidity;
   let humidityPercent = document.querySelector("#humidity");
   humidityPercent.innerHTML = `${humidity}%`;
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let form = document.querySelector("#search-form");
