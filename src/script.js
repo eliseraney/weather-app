@@ -36,9 +36,11 @@ function displayWeatherConditions(response) {
   let weatherDescription = document.querySelector("p");
   weatherDescription.innerHTML = `${condition}`;
 
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celsiusTemperature);
   let highTemp = document.querySelector(".high");
-  highTemp.innerHTML = `${temperature}°C`;
+  highTemp.innerHTML = `${temperature}`;
 
   let speed = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
@@ -54,6 +56,23 @@ function displayWeatherConditions(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector(".high");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector(".high");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let form = document.querySelector("#search-form");
@@ -84,5 +103,13 @@ currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 
 let currentCityButton = document.querySelector("#current-city-button");
 currentCityButton.addEventListener("click", handlePosition);
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Houston");

@@ -34,6 +34,16 @@ small {
   text-align: right;
 }
 
+.degrees {
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.degrees .active {
+  color: #fff;
+  text-decoration: none;
+}
+
 .specific {
   text-align: center;
   font-size: 12px;
