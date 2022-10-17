@@ -30,8 +30,13 @@ small {
   margin-top: 50px;
 }
 
+.container {
+  max-width: 600px;
+}
+
 #date-time {
-  text-align: right;
+  text-align: left;
+  padding-top: 10px;
 }
 
 .degrees {
@@ -75,9 +80,8 @@ small {
 }
 
 #search-form {
-  position: fixed;
-  top: 5px;
-  left: 5px;
+  display: block;
+  padding-top: 10px;
 }
 
 #fahrenheit-celsius {
