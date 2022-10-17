@@ -54,6 +54,7 @@ hr {
 .specific {
   text-align: center;
   font-size: 12px;
+  opacity: 85%;
 }
 
 .fiveDay {
@@ -76,6 +77,11 @@ hr {
 .high {
   font-weight: bold;
   color: #ebb652;
+}
+
+.fiveDayLow {
+  font-weight: lighter;
+  opacity: 70%;
 }
 
 #search-form {

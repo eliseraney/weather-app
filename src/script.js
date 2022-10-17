@@ -43,7 +43,7 @@ function displayWeatherConditions(response) {
   let currentDate = document.querySelector("#date-time");
   currentDate.innerHTML = formatDate(response.data.dt);
 
-  let condition = response.data.weather[0].main;
+  let condition = response.data.weather[0].description;
   let weatherDescription = document.querySelector("p");
   weatherDescription.innerHTML = `${condition}`;
 
