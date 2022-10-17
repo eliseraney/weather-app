@@ -1,5 +1,5 @@
 body {
-  background-color: #4b595e;
+  background-color: #033b55;
   font-family: "Varela Round", sans-serif;
   color: #fff;
 }
@@ -16,7 +16,7 @@ h1 {
   font-size: 30px;
   text-align: center;
   font-weight: bolder;
-  color: #ffe963;
+  color: #f79500;
 }
 
 h2 {
@@ -30,23 +30,25 @@ small {
   margin-top: 50px;
 }
 
+hr {
+  max-width: 150px;
+  display: block;
+  margin: 20px auto;
+}
+
 .container {
   max-width: 600px;
 }
 
 #date-time {
+  font-size: 12px;
   text-align: left;
   padding-top: 10px;
 }
 
-.degrees {
+.degree {
   font-size: 15px;
   vertical-align: top;
-}
-
-.degrees .active {
-  color: #fff;
-  text-decoration: none;
 }
 
 .specific {
@@ -73,6 +75,7 @@ small {
 
 .high {
   font-weight: bold;
+  color: #ebb652;
 }
 
 #search-form {
@@ -87,6 +90,6 @@ small {
 #icon {
   display: block;
   margin: 20px auto;
-  width: 20%;
   margin-bottom: 5px;
+  width: 18%;
 }
