@@ -85,28 +85,45 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let fiveDayForecast = document.querySelector("#five-day-forecast");
 
   let fiveDayForecastHTML = "";
 
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
-    fiveDayForecastHTML =
-      fiveDayForecastHTML +
-      `
-        <div class="col-4 day">${day}</div>
-        <div class="col-4 sunny">
-            <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col-4">
-          <span class="fiveDayHigh"><strong>88° </strong></span>
-          <span class="fiveDayLow"> 58°</span>
-        </div>
-  `;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      fiveDayForecastHTML =
+        fiveDayForecastHTML +
+        `
+          <div class="col-4 day">${formatDay(forecastDay.dt)}</div>
+          <div class="col-4 weatherIcon">
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }.png" class="fiveDayIcon" />
+          </div>
+          <div class="col-4 temp">
+            <span class="fiveDayHigh"><strong>${Math.round(
+              forecastDay.temp.max
+            )}° </strong></span>
+            <span class="fiveDayLow"> ${Math.round(
+              forecastDay.temp.min
+            )}°</span>
+          </div>
+        `;
+    }
   });
 
   fiveDayForecast.innerHTML = fiveDayForecastHTML;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
 }
 
 let form = document.querySelector("#search-form");
