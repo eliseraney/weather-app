@@ -56,6 +56,8 @@ function displayWeatherConditions(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  displayForecast();
 }
 
 function convertToFahrenheit(event) {
@@ -73,6 +75,30 @@ function convertToCelsius(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector(".high");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayForecast() {
+  let fiveDayForecast = document.querySelector("#five-day-forecast");
+
+  let fiveDayForecastHTML = "";
+
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    fiveDayForecastHTML =
+      fiveDayForecastHTML +
+      `
+        <div class="col-4 day">${day}</div>
+        <div class="col-4 sunny">
+            <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col-4">
+          <span class="fiveDayHigh"><strong>88° </strong></span>
+          <span class="fiveDayLow"> 58°</span>
+        </div>
+  `;
+  });
+
+  fiveDayForecast.innerHTML = fiveDayForecastHTML;
 }
 
 let form = document.querySelector("#search-form");
