@@ -90,8 +90,10 @@ function displayForecast(response) {
           <div class="col-4 temp">
             <span class="fiveDayHigh"><strong>${Math.round(
               forecastDay.temp.max
-            )}°</strong></span>
-            <span class="fiveDayLow">${Math.round(forecastDay.temp.min)}°</span>
+            )}°&nbsp</strong></span>
+            <span class="fiveDayLow"> ${Math.round(
+              forecastDay.temp.min
+            )}°</span>
           </div>
         `;
     }
