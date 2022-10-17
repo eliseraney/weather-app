@@ -27,6 +27,14 @@ function findCurrentCity(position) {
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "701f06352d61835bc4fc894e7b084629";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherConditions(response) {
   let cityName = response.data.name;
   let h1 = document.querySelector("h1");
@@ -57,7 +65,7 @@ function displayWeatherConditions(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
 
-  displayForecast();
+  getForecast(response.data.coord);
 }
 
 function convertToFahrenheit(event) {
